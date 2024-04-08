@@ -1,7 +1,5 @@
 <template>
-    <header>Movie Form</header>
     <form id="movieForm" @submit.prevent="saveMovie">
-        <h1>Add Movie</h1>
         <div class="form-group mb-3">
             <label for="title" class="form-label">Movie Title</label>
             <input type="text" name="title" class="formcontrol" />
@@ -22,10 +20,10 @@
 </template>
 
 <script setup>
-    import { ref, onMounted } from "vue";
-    let csrf_token = ref("")
-    let fetchResponseType = ref("")
-    let fetchResponse = ref("")
+    import { ref, onMounted} from "vue";
+    let csrf_token = ref("");
+    let fetchResponseType = ref("");
+    let fetchResponse = ref("");
     
     function getCsrfToken() {
         fetch('/api/v1/csrf-token')
@@ -66,3 +64,5 @@
         });
     }
 </script> 
+<style>
+</style>
